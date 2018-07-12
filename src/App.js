@@ -23,7 +23,6 @@ class App extends Component {
             <Route exact path="/cours" component={ListFilm} />
             <Route exact path="/cours/:id" component={SingleCour} />
             <Route exact path="/cours/edit/:id" component={EditCours} />
-            {/* <Route exact path="/cours/delete/:id" component={EditCours} /> */}
          </div>
        </Router>
       </div>

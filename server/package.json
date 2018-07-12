@@ -4,18 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "backpack",
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-stage-3": "^6.24.1",
-    "backpack-core": "^0.7.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "express-domain-middleware": "^0.1.0",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.2",
-    "multer": "^1.3.1"
+    "multer": "^1.3.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.1"
   }
 }
