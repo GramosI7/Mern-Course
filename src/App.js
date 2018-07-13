@@ -10,6 +10,9 @@ import ListFilm from './components/ListFilm';
 import Home from "./components/Home";
 import SingleCour from "./components/SingleCour";
 import EditCours from "./components/EditCours";
+import Login from "./components/Login";
+import Register from "./components/Register"
+
 
 class App extends Component {
   render() {
@@ -23,6 +26,8 @@ class App extends Component {
             <Route exact path="/cours" component={ListFilm} />
             <Route exact path="/cours/:id" component={SingleCour} />
             <Route exact path="/cours/edit/:id" component={EditCours} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
          </div>
        </Router>
       </div>

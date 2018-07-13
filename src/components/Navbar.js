@@ -22,11 +22,21 @@ const Navbar = () => {
               </li>
             </ul>
 
-            <form className="form-inline my-2 my-lg-0">
+            <form className="form-inline">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <button className="btn btn-outline-success my-2 my-sm-0">Search</button>
             </form>
+
           </div>
+
+          <ul className="navbar-nav mr-rigth mt-2 mt-lg-0">
+              <li className="nav-item active">
+                <NavLink to="/login" className="nav-link">Login</NavLink><span className="sr-only">(current)</span>
+              </li>
+              <li className="nav-item active">
+                <NavLink className="nav-link" to="/register">Register</NavLink><span className="sr-only">(current)</span>
+              </li>
+            </ul>
         </nav>
     )
 }

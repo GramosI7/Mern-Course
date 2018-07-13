@@ -26,8 +26,16 @@ require("./config/passport")(passport);
 
 const coursRouter = require("./routes/cours");
 const userRouter = require("./routes/user");
+const profilRouter = require("./routes/profil");
+const postRouter = require("./routes/post");
+
+
 app.use('/cours', coursRouter);
 app.use('/users', userRouter);
+app.use('/profil', profilRouter);
+app.use('/post', postRouter);
+
+
 
 app.get("/", (req, res) => {
     res.send('Hi')
