@@ -1,7 +1,14 @@
 import React from "react";
 
-const Input = () => {
-   
+
+class Input extends React.Component {
+    // componentDidMount() {
+    //     if(this.props.auth.isAuthenticated) {
+    //       this.props.history.push("/cours")
+    //     }
+    //   }
+    render() {
+        
         return (
             <div className="container">
                     <br/>
@@ -38,6 +45,7 @@ const Input = () => {
             </div>
             
         )
-    }
+    }     
+}
 
 export default Input;

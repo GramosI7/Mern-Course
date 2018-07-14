@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import axios from "axios";
 import classnames from "classnames";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { registerUser } from "../actions/authActions";
 
 
 class Register extends Component {
@@ -12,6 +14,18 @@ class Register extends Component {
     errors: {}
   }
 
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push("/cours")
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.errors) {
+      this.setState({errors: nextProps.errors})
+    }
+  }
+
   handleOnChange = (e) => {
     this.setState({
       [e.target.name] : e.target.value
@@ -20,24 +34,21 @@ class Register extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-
     const newUser = {
       name : this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     }
-
-    axios.post("http://localhost:4000/users/register", newUser)
-        .then(res => console.log(res.data))
-        .catch(err => this.setState({errors: err.response.data}));
-    
+    this.props.registerUser(newUser, this.props.history)
   }
 
   render() {
-    const {errors} = this.state;
+    const { errors } = this.state;
+    const { user } = this.props.auth;
     return (
       <form onSubmit={this.handleOnSubmit} className="container">
+      {/* {user ? user.name : null} */}
       <h1>Register</h1>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Name</label>
@@ -66,4 +77,9 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));

@@ -50,7 +50,6 @@ class SingleCour extends Component {
                 <NavLink to={`/cours/edit/${coursId._id}`} className="btn btn-primary">Edit</NavLink>
                 &nbsp;
                 <a href={`http://localhost:4000/cours/delete/${coursId._id}`} className="btn btn-danger">Delete</a>
-
             </div>
         </div>
         )

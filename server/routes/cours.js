@@ -36,7 +36,7 @@ coursRouter.post('/add', upload.single('img'),(req, res) => {
     });
 });
 
-// Edit Cours // Img Multer not work
+// Edit Cours 
 coursRouter.post('/edit/:id', upload.single('img'), (req, res) => {
     let body = {
         title: req.body.title,
